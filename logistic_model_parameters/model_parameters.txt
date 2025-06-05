@@ -1,0 +1,47 @@
+// --- Parâmetros do Modelo (logistic) e Scaler para Implementação em C/C++ ---
+// Gerado em: 2025-06-04 23:02:45.029325
+
+// Parâmetros do StandardScaler (média e escala/desvio_padrão):
+// Use estes para escalar as features no ESP32 antes da predição
+// Número de features que o scaler espera: 32
+// Nomes das features (na ordem esperada pelo scaler/modelo):
+// Feature 0: mean_accel_x
+// Feature 1: std_accel_x
+// Feature 2: var_accel_x
+// Feature 3: min_accel_x
+// Feature 4: max_accel_x
+// Feature 5: ptp_accel_x
+// Feature 6: energy_accel_x
+// Feature 7: mav_accel_x
+// Feature 8: mean_accel_y
+// Feature 9: std_accel_y
+// Feature 10: var_accel_y
+// Feature 11: min_accel_y
+// Feature 12: max_accel_y
+// Feature 13: ptp_accel_y
+// Feature 14: energy_accel_y
+// Feature 15: mav_accel_y
+// Feature 16: mean_accel_z
+// Feature 17: std_accel_z
+// Feature 18: var_accel_z
+// Feature 19: min_accel_z
+// Feature 20: max_accel_z
+// Feature 21: ptp_accel_z
+// Feature 22: energy_accel_z
+// Feature 23: mav_accel_z
+// Feature 24: mean_svm
+// Feature 25: std_svm
+// Feature 26: var_svm
+// Feature 27: min_svm
+// Feature 28: max_svm
+// Feature 29: ptp_svm
+// Feature 30: energy_svm
+// Feature 31: mav_svm
+const float scaler_means[] = {10.21886541f, 2.28296651f, 10.20023889f, 5.22562478f, 18.98728822f, 13.76166343f, 5740.88572806f, 10.23268411f, 0.29410218f, 0.93116674f, 1.66920908f, -1.65741119f, 3.62482139f, 5.28223258f, 89.91796834f, 0.71845937f, -2.25340990f, 1.24075164f, 2.92679911f, -6.87506484f, 0.91182524f, 7.78689007f, 404.03677510f, 2.41622221f, 10.64256298f, 2.36730343f, 11.20050337f, 6.55009465f, 20.43635561f, 13.88626096f, 6234.84047149f, 10.64256298f};
+const float scaler_scales[] = {0.43848090f, 2.23345087f, 13.37981538f, 4.70485023f, 9.60728868f, 13.52942530f, 904.70063484f, 0.43511866f, 0.20652894f, 0.89562134f, 2.23530918f, 1.66032869f, 3.86593248f, 5.19538032f, 119.17124595f, 0.49746271f, 0.27582642f, 1.17785164f, 3.80559178f, 5.26900775f, 3.13734484f, 7.75847094f, 212.97004625f, 0.27281179f, 0.48182907f, 2.36566647f, 15.45066859f, 3.43805079f, 11.08204307f, 13.91323103f, 1188.02728350f, 0.48182907f};
+
+// Parâmetros do Modelo (logistic):
+// y_pred_raw = w[0]*f_scaled[0] + ... + w[n-1]*f_scaled[n-1] + bias
+// P(y=1) = 1 / (1 + exp(-y_pred_raw)); Prever 1 se P(y=1) > 0.5
+const float model_weights[] = {-0.17020935f, 0.40698866f, -0.42459450f, -0.40391110f, 0.18315703f, 0.27052026f, -0.40369008f, -0.20178912f, 0.92826360f, 0.78638197f, -0.29678722f, -1.30105247f, -0.34587637f, 0.15841767f, -0.25434514f, 1.32539134f, -0.85999799f, 0.90731663f, -0.27166656f, 0.17569524f, 0.98940135f, 0.28077100f, -0.00613811f, 0.43735945f, -0.03930666f, 0.31498672f, -0.47548902f, -0.76731637f, 0.02387615f, 0.20862653f, -0.33402982f, -0.03930666f};
+const float model_bias = 1.67400376f;
