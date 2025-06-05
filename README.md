@@ -1,5 +1,12 @@
 # Projeto Detector de Tremores Sísmicos com ESP32 e IA Embarcada
 
+## Integrantes do Grupo
+
+- **Paulo Carvalho Ruiz Borba** (RM554562)
+- **Herbertt Di Franco Marques** (RM556640)
+- **Lorena Bauer Nogueira** (RM555272)
+
+---
 ## Descrição
 
 Este projeto implementa um sistema de detecção de tremores sísmicos utilizando um microcontrolador ESP32, um sensor acelerômetro/giroscópio MPU6050 e um modelo de Machine Learning (Regressão Logística) embarcado para realizar a inferência diretamente no dispositivo (Edge Computing). Quando um tremor é detectado, o ESP32 pode operar de forma autônoma, imprimindo alertas na serial, ou conectar-se a uma rede Wi-Fi para enviar um alerta para um servidor central.
